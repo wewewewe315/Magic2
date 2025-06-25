@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>أداة تحليل الضربات والتوقعات</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>أداة تحليل الضربات والتوقعات</header>
+
+  <nav>
+    <button class="tab-btn active" onclick="switchTab('record', event)">تسجيل الضربات</button>
+    <button class="tab-btn" onclick="switchTab('predict', event)">التوقع الذكي</button>
+    <button class="tab-btn" onclick="switchTab('advanced', event)">التوقع المتقدم</button>
+  </nav>
+
+  <section id="record" class="active">
+    <h2>تسجيل الضربات</h2>
+    <div class="controls">
+      <label>رقم البداية:</label>
+      <input type="number" id="startNumber" value="1" />
+      <button class="btn-action" onclick="setStart()">تأكيد</button>
+    </div>
+
+    <div class="grid">
+      <div class="btn-pattern" data-value="X40-R">X40 يمين</div>
+      <div class="btn-pattern" data-value="X40-L">X40 يسار</div>
+      <div class="btn-pattern" data-value="X12-R">X12 يمين</div>
+      <div class="btn-pattern" data-value="X12-L">X12 يسار</div>
+      <div class="btn-pattern" data-value="X6-R">X6 يمين</div>
+      <div class="btn-pattern" data-value="X6-L">X6 يسار</div>
+      <div class="btn-pattern" data-value="X4-R">X4 يمين</div>
+      <div class="btn-pattern" data-value="X4-L">X4 يسار</div>
+    </div>
+
+    <div class="actions">
+      <button class="btn-action" onclick="registerPattern()">تسجيل</button>
+      <button class="btn-action" onclick="undoLast()">تراجع</button>
+      <button class="btn-action" onclick="resetAll()">إعادة التهيئة</button>
+      <button class="btn-action" onclick="exportToDocx()">استخراج البيانات</button>
+      <button class="btn-action" onclick="analyzeX40()">تقرير X40</button>
+      <button class="btn-action" onclick="analyzePatterns()">تحليل نمطي</button>
+    </div>
+  </section>
+
+  <section id="predict">
+    <h2>التوقع الذكي</h2>
+    <div class="prediction-box" id="predictionBox">
+      <p>اضغط الزر أدناه لتحليل السلوك وتوقع الضربة القادمة:</p>
+      <button class="btn-action" onclick="runSmartPrediction()">بدء التوقع الذكي</button>
+      <div id="predictionResults"></div>
+    </div>
+  </section>
+
+  <section id="advanced">
+    <h2>صفحة التوقع المتقدم</h2>
+    <p>(تطوير قادم...)</p>
+  </section>
+</body>
+</html>

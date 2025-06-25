@@ -1,0 +1,96 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f5f7;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+header {
+  background: #007bff;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  background: #e0e0e0;
+  padding: 10px 0;
+}
+nav button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #fff;
+}
+nav button.active {
+  background-color: #007bff;
+  color: white;
+}
+section {
+  display: none;
+  padding: 20px;
+}
+section.active {
+  display: block;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  gap: 15px;
+  justify-content: center;
+  margin: 25px 0;
+}
+.btn-pattern {
+  background: #fff;
+  border: 2px solid #007bff;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-pattern.selected {
+  background: #b3dcff;
+}
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+.btn-action {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.controls {
+  margin: 20px 0;
+}
+input[type='number'] {
+  padding: 6px;
+  font-size: 16px;
+  width: 90px;
+  margin-right: 10px;
+}
+.prediction-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+.prediction-box ul {
+  text-align: right;
+  direction: rtl;
+}
